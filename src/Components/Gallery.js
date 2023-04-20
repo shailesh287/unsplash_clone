@@ -20,7 +20,7 @@ import React, { useState, useEffect } from 'react';
 
     useEffect(() => {
       dispatch(getRandomPhotos());
-    }, []);
+    });
 
     useEffect(() => {
       const handleScroll = () => {
@@ -42,18 +42,13 @@ import React, { useState, useEffect } from 'react';
       return () => {
         window.removeEventListener('scroll', handleScroll);
       };
-    }, [isLoading, setPage, searchQuery, searchResults]);
+    }, [isLoading, setPage, searchQuery, searchResults,dispatch, page]);
 
     const debouncedSearch = debounce(() => {
       dispatch(searchPhotos({ searchTerm: searchQuery, page })).then((results) => {
         setSearchResults(results);
       });
     }, 500);
-    const handleKeyPress = (e) => {
-      if (e.key === 'Enter') {
-        debouncedSearch();
-      }
-    };
     const handleSearch = () => {
       debouncedSearch();
     };
