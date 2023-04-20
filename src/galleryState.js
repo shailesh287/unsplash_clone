@@ -3,7 +3,7 @@ import {createAsyncThunk, createSlice} from '@reduxjs/toolkit'
 export const getPhotos = createAsyncThunk(
     '/photos',
 async (page) => {
-    const response = await  fetch(`https://api.unsplash.com/photos?page=${page}&client_id=10BbcIgpy3xj7x7cfFfA128z_p-fzvsycaJyC-mjbhc`)
+    const response = await  fetch(`https://api.unsplash.com/photos?page=${page}&client_id=rSWFSQr_GjKB77tZYlTRhRq7aKS8kLxV2LmSDip2aOk`)
     const formattedReponse =  await response.json()
     return formattedReponse
 }
@@ -12,7 +12,7 @@ async (page) => {
 export const getRandomPhotos = createAsyncThunk(
     '/photos/random',
 async (page) => {
-    const response = await  fetch(`https://api.unsplash.com/photos/random?client_id=10BbcIgpy3xj7x7cfFfA128z_p-fzvsycaJyC-mjbhc`)
+    const response = await  fetch(`https://api.unsplash.com/photos/random?client_id=rSWFSQr_GjKB77tZYlTRhRq7aKS8kLxV2LmSDip2aOk`)
     const formattedReponse =  await response.json()
     return formattedReponse
 }
@@ -21,7 +21,7 @@ async (page) => {
     export const searchPhotos = createAsyncThunk(
         '/search/photos',
         async ({searchTerm, page}) => {
-          const response = await fetch(`https://api.unsplash.com/search/photos?page=${page}&query=${searchTerm}&client_id=10BbcIgpy3xj7x7cfFfA128z_p-fzvsycaJyC-mjbhc`);
+          const response = await fetch(`https://api.unsplash.com/search/photos?page=${page}&query=${searchTerm}&client_id=rSWFSQr_GjKB77tZYlTRhRq7aKS8kLxV2LmSDip2aOk`);
           const formattedResponse = await response.json();
           return formattedResponse.results;
         }
