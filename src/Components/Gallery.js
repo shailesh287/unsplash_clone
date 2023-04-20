@@ -20,7 +20,7 @@ import React, { useState, useEffect } from 'react';
 
     useEffect(() => {
       dispatch(getRandomPhotos());
-    }, []);
+    }, [dispatch, page]);
 
     useEffect(() => {
       const handleScroll = () => {
